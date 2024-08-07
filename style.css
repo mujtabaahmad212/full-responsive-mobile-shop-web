@@ -8,6 +8,9 @@
     background-color: rgb(0, 149, 255);
     display: flex;justify-content: space-around;
     padding: 10px;
+    -webkit-box-shadow: 0 0 12px 0.5px #000000;
+-moz-box-shadow: 0 0 12px 0.5px #000000;
+box-shadow: 0 0 12px 0.5px #000000;
 }
 .logo{
    margin-top: 10px;
@@ -49,63 +52,255 @@ input{
     filter: invert();
     cursor: pointer;
 }
-.navbar{
+/* nav bar */
+.navbar {
     display: flex;
     gap: 20px;
     margin-top: 3%;
+    
 }
-.links{
+
+.links {
     background-color: rgb(35, 147, 245);
     margin-left: 3%;
-    
-    
-
 
     
 }
-.links h1{
+
+.links h1 {
     color: white;
     background-color: #f65206;
-    padding: 10px; margin: 15px 10px;
+    padding: 10px;
+    margin: 15px 10px;
     text-align: center;
 }
-.links a{
+
+.links a {
     text-decoration: none;
     color: black;
     display: flex;
     margin: 20px;
     width: 230px;
-    &&:hover{
-        color: white;
-    }
-     
 }
-aside img{
+
+.links a:hover {
+    color: white;
+}
+
+aside img {
     width: 100%;
     height: 100%;
 }
+
+/* Media queries for responsiveness */
+
+@media (max-width: 1200px) {
+    .navbar {
+        height: 80%;
+    }
+    .links {
+        margin-left: 3%;
+        width: 80%;
+        font-size: small;
+        align-items: center;
+       
+    }
+    .links h1{
+        font-size: small;
+    }
+   
+}
+
+@media (max-width: 768px) {
+    .links {
+        margin-left: 0;
+        width: 20%;
+        height: 200px;
+       
+    }
+
+    .links h1 {
+        padding: 0px;
+        margin: 15px auto;
+    }
+
+    .links a {
+        /* margin: 10px auto; */
+        margin: 0px 30px 0px;
+        text-align: center;
+       
+        justify-content: center;
+        width: 0px;
+    }
+    
+
+    aside img {
+        width: 100%;
+        height: 200px;
+    }
+
+    input {
+        width: 100%;
+    }
+    .searchicon {
+        width: 30%;
+        
+        box-shadow: 5px 0px 20px rgb(110, 110, 110);
+        padding: 20%;
+    }
+    .headicons img {
+        width: 40%;
+        margin-top: 10px;
+        filter: invert();
+    }
+    .logo{
+        width: 20%;
+        margin-top: 10px;
+        filter: invert();
+    }
+}
+
+@media (max-width: 480px) {
+    .links {
+        width: 100%;
+        height: 100px;
+    }
+
+    .links h1 {
+        font-size: 0.7em;
+       margin: 0;
+    }
+
+    .links a {
+        font-size: 0.6em;
+        width: 100%;
+        margin: 0;
+    }
+
+    aside img {
+        width: 100%;
+        height: auto;
+    }
+    input {
+        width: 100%;
+    }
+}
 /* content */
 
-.phones{
-    display: flex;
-    justify-content: space-around;
-    /* margin-left: 8%; */
-   
-   
+h1 {
+    text-align: center;
+    margin: 30px;
 }
 
-.phones img{
-    width: 60%;
- margin-left: 20%;
-   
-  
-}
-.phones p{
-    text-align: center;
-}
-.mobile{
-  display: flex;
-   
-  justify-content: space-between;
+.phones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-image: url(./assests/TMS_Kiosk_MobileShopping.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
     
+   
+}
+.phones::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: brightness(0.8);
+    background-repeat: inherit;
+    /* filter: blur(5px);  */
+    z-index: -1;
+}
+
+.phones img {
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px -2.10px #3e3e3e;
+    transition: transform 0.3s;
+    &&:hover{
+      
+        transform: translateY(-5px);
+    }
+}
+
+.phones div {
+    
+    flex: 1 1 30%;
+    margin: 10px;
+    box-sizing: border-box;
+    
+}
+
+.phones p {
+    text-align: center;
+    margin: 5px 0;
+}
+.phdiv{
+    
+    background-color: rgba(255, 255, 255, 0.623);
+    border: 2px solid white;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 12px -2.5px #5e5d5d;
+-moz-box-shadow: 0 0 12px -2.5px #484848;
+box-shadow: 0 0 12px -2.5px #5b5b5b;
+transition: transform 0.3s;
+    &&:hover{
+      
+        transform: translateY(5px);
+    }
+}
+
+.mobile {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Media queries for responsiveness */
+
+@media (max-width: 1200px) {
+    .phones div {
+        flex: 1 1 45%;
+    }
+    .phones img {
+        width: 40%;
+        margin: 0 auto;
+        margin-left: 30%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .phones div {
+        flex: 1 1 90%;
+    }
+
+    .phones img{
+        width: 40%;
+        margin: 0 auto;
+        margin-left: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .phones div {
+        flex: 1 1 100%;
+    }
+
+    .phones img {
+        width: 30%;
+        margin: 0 auto;
+        margin-left: 35%;
+    }
 }
